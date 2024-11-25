@@ -44,4 +44,3 @@ def get_current_habits(habits, periodicity):
     - list[Habit]: A list of habits matching the specified periodicity.
     """
     return [habit for habit in habits if habit.periodicity == periodicity]
-
