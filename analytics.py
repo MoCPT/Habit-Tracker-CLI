@@ -15,6 +15,7 @@ def get_streak_for_habit(tracker, habit_name):
             return habit.streak
     return 0  # Return 0 if the habit is not found
 
+
 def get_longest_streak(tracker):
     """
     Finds the habit with the longest streak.
@@ -29,3 +30,18 @@ def get_longest_streak(tracker):
     if not habits:
         return None
     return max(habits, key=lambda habit: habit.streak)  # Return the habit with the longest streak
+
+
+def get_current_habits(habits, periodicity):
+    """
+    Filters habits by periodicity.
+
+    Parameters:
+    - habits (list[Habit]): A list of Habit objects.
+    - periodicity (str): The periodicity to filter by ('daily' or 'weekly').
+
+    Returns:
+    - list[Habit]: A list of habits matching the specified periodicity.
+    """
+    return [habit for habit in habits if habit.periodicity == periodicity]
+
